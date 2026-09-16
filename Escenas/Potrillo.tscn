@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://n1wnplsf2l4w"]
+
+[ext_resource type="Script" uid="uid://wg253tro8di0" path="res://Escenas/Potrillo.gd" id="1_8ial7"]
+[ext_resource type="Texture2D" uid="uid://befgqnan5wbks" path="res://icon.svg" id="2_6i2q3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyn6o"]
+atlas = ExtResource("2_6i2q3")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdbgw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyn6o")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xppu"]
+size = Vector2(128, 128)
+
+[node name="Potrillo" type="CharacterBody2D" unique_id=909764345]
+script = ExtResource("1_8ial7")
+
+[node name="Anim" type="AnimatedSprite2D" parent="." unique_id=1276825526]
+sprite_frames = SubResource("SpriteFrames_vdbgw")
+animation = &"Idle"
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1212805432]
+shape = SubResource("RectangleShape2D_0xppu")
+debug_color = Color(0.68851364, 0.4978866, 3.85046e-07, 0.41960785)

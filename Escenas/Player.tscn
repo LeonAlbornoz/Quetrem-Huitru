@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cq0eqwjqvfwq8"]
+
+[ext_resource type="Texture2D" uid="uid://befgqnan5wbks" path="res://icon.svg" id="1_83e7o"]
+[ext_resource type="Script" uid="uid://w5vttbkjtlqg" path="res://Escenas/Player.gd" id="1_wwpud"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwpud"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdbgw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwpud")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdbgw"]
+size = Vector2(64, 64)
+
+[node name="Player" type="CharacterBody2D" unique_id=1781514266]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_wwpud")
+
+[node name="Anim" type="AnimatedSprite2D" parent="." unique_id=33832969]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_vdbgw")
+animation = &"Idle"
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1843040260]
+shape = SubResource("RectangleShape2D_vdbgw")
+debug_color = Color(0.9717571, 0, 0.4490255, 0.41960785)
