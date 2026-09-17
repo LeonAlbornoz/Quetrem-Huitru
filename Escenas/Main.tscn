@@ -62,6 +62,7 @@ tile_set = ExtResource("2_qpgdo")
 
 [node name="Player" parent="." unique_id=1781514266 instance=ExtResource("2_sem21")]
 position = Vector2(456, 280)
+speed = 300
 
 [node name="Pieza1" type="Area2D" parent="." unique_id=1614259994]
 position = Vector2(264, -16)

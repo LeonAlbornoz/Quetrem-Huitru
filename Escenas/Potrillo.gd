@@ -22,9 +22,15 @@ func _physics_process(_delta: float) -> void:
 	
 	velocity = direction * speed
 	
-	if velocity.x > 0:
-		anim.play("Walk_Right")
+	if abs(direction.x) > abs(direction.y):
+		if direction.x > 0:
+			anim.play("Walk_Right")
+		else:
+			anim.play("Walk_Left")
 	else:
-		anim.play("Walk_Left")
+		if direction.y > 0:
+			anim.play("Walk_Down")
+		else:
+			anim.play("Walk_Up")
 	
 	move_and_slide()

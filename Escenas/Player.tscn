@@ -193,7 +193,6 @@ size = Vector2(32, 32)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_wwpud")
-speed = 400
 
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=33832969]
 scale = Vector2(3, 3)
