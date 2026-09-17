@@ -2,8 +2,37 @@
 
 [ext_resource type="Script" uid="uid://wg253tro8di0" path="res://Escenas/Potrillo.gd" id="1_8ial7"]
 [ext_resource type="Texture2D" uid="uid://befgqnan5wbks" path="res://icon.svg" id="2_6i2q3"]
+[ext_resource type="Texture2D" uid="uid://c7rhh34dwa7pv" path="res://Assets/Potrillo.png" id="3_6i2q3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gyn6o"]
+atlas = ExtResource("2_6i2q3")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7inl1"]
+atlas = ExtResource("3_6i2q3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwg3d"]
+atlas = ExtResource("3_6i2q3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxalx"]
+atlas = ExtResource("3_6i2q3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxyef"]
+atlas = ExtResource("3_6i2q3")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl2jy"]
+atlas = ExtResource("3_6i2q3")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rocnl"]
+atlas = ExtResource("3_6i2q3")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i5sk"]
 atlas = ExtResource("2_6i2q3")
 region = Rect2(0, 0, 128, 128)
 
@@ -14,20 +43,64 @@ animations = [{
 "texture": SubResource("AtlasTexture_gyn6o")
 }],
 "loop": 1,
-"name": &"Idle",
+"name": &"Walk_Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7inl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwg3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxalx")
+}],
+"loop": 1,
+"name": &"Walk_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxyef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl2jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rocnl")
+}],
+"loop": 1,
+"name": &"Walk_Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i5sk")
+}],
+"loop": 1,
+"name": &"Walk_Up",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xppu"]
-size = Vector2(128, 128)
+size = Vector2(64, 64)
 
 [node name="Potrillo" type="CharacterBody2D" unique_id=909764345]
 script = ExtResource("1_8ial7")
 
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=1276825526]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vdbgw")
-animation = &"Idle"
+animation = &"Walk_Right"
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1212805432]
 shape = SubResource("RectangleShape2D_0xppu")
 debug_color = Color(0.68851364, 0.4978866, 3.85046e-07, 0.41960785)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=277796244]
+
+[node name="Timer" type="Timer" parent="NavigationAgent2D" unique_id=1284400231]
+wait_time = 0.2
+
+[connection signal="timeout" from="NavigationAgent2D/Timer" to="." method="_on_timer_timeout"]

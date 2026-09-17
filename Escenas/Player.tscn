@@ -7,6 +7,34 @@
 atlas = ExtResource("1_83e7o")
 region = Rect2(0, 0, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1rio"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhy33"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hhfp"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwdw2"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2dk4"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urfe6"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mok4h"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(0, 0, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_vdbgw"]
 animations = [{
 "frames": [{
@@ -14,23 +42,82 @@ animations = [{
 "texture": SubResource("AtlasTexture_wwpud")
 }],
 "loop": 1,
-"name": &"Idle",
+"name": &"Idle_Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1rio")
+}],
+"loop": 1,
+"name": &"Idle_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhy33")
+}],
+"loop": 1,
+"name": &"Idle_Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hhfp")
+}],
+"loop": 1,
+"name": &"Idle_Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwdw2")
+}],
+"loop": 1,
+"name": &"Walk_Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2dk4")
+}],
+"loop": 1,
+"name": &"Walk_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urfe6")
+}],
+"loop": 1,
+"name": &"Walk_Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mok4h")
+}],
+"loop": 1,
+"name": &"Walk_Up",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdbgw"]
-size = Vector2(64, 64)
+size = Vector2(32, 32)
 
-[node name="Player" type="CharacterBody2D" unique_id=1781514266]
+[node name="Player" type="CharacterBody2D" unique_id=1781514266 groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_wwpud")
+speed = 400
 
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=33832969]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_vdbgw")
-animation = &"Idle"
+animation = &"Idle_Up"
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1843040260]
 shape = SubResource("RectangleShape2D_vdbgw")
 debug_color = Color(0.9717571, 0, 0.4490255, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1609742488]
