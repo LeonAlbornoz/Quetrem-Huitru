@@ -88,6 +88,7 @@ size = Vector2(64, 64)
 
 [node name="Potrillo" type="CharacterBody2D" unique_id=909764345]
 script = ExtResource("1_8ial7")
+speed = 400
 
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=1276825526]
 scale = Vector2(2, 2)
@@ -99,8 +100,3 @@ shape = SubResource("RectangleShape2D_0xppu")
 debug_color = Color(0.68851364, 0.4978866, 3.85046e-07, 0.41960785)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=277796244]
-
-[node name="Timer" type="Timer" parent="NavigationAgent2D" unique_id=1284400231]
-wait_time = 0.2
-
-[connection signal="timeout" from="NavigationAgent2D/Timer" to="." method="_on_timer_timeout"]

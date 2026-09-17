@@ -1,18 +1,51 @@
 [gd_scene format=4 uid="uid://ve6amwlkwk0u"]
 
 [ext_resource type="Script" uid="uid://dvpkkrh756t2c" path="res://Escenas/Main.gd" id="1_fdcud"]
+[ext_resource type="PackedScene" uid="uid://18yhnywbge6c" path="res://Escenas/UI.tscn" id="2_3yqt6"]
 [ext_resource type="TileSet" uid="uid://dmt371rg6lvbc" path="res://TileSet.tres" id="2_qpgdo"]
 [ext_resource type="PackedScene" uid="uid://cq0eqwjqvfwq8" path="res://Escenas/Player.tscn" id="2_sem21"]
 [ext_resource type="PackedScene" uid="uid://n1wnplsf2l4w" path="res://Escenas/Potrillo.tscn" id="3_j5xpj"]
+[ext_resource type="Texture2D" uid="uid://h1ltr04p56fh" path="res://Assets/Calden_Provisional.png" id="5_3yqt6"]
+[ext_resource type="Texture2D" uid="uid://befgqnan5wbks" path="res://icon.svg" id="6_mbvap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdbgw"]
+size = Vector2(45, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yqt6"]
+size = Vector2(152, 42)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vdbgw"]
-vertices = PackedVector2Array(552, 552, 831.4297, 576.7969, 296, 587.5078, 408, 552, 296, 408, 408, 280, 824.5625, 96, 552, 280, 296, 96, 296, 360, 108.89844, 408, 108.22656, 360)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 1, 0, 7), PackedInt32Array(8, 6, 7, 5), PackedInt32Array(9, 8, 5), PackedInt32Array(9, 5, 4), PackedInt32Array(10, 11, 9, 4)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(64, 56, 864, 56, 872, 616, 72, 632)])
-agent_radius = 40.0
+vertices = PackedVector2Array(955.9219, 683.6719, 5.4765625, 698.28906, 301, 621, 557, 557, 403, 557, 83, 621, 12.53125, 28.320313, 83, 403, 301, 365, 301, 83, 403, 275, 301, 403, 970.02344, 13.703125, 557, 275, 83, 365, 83, 83)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2), PackedInt32Array(5, 2, 1), PackedInt32Array(5, 1, 6, 7), PackedInt32Array(8, 9, 10, 4), PackedInt32Array(4, 2, 11), PackedInt32Array(8, 4, 11), PackedInt32Array(12, 0, 3, 13), PackedInt32Array(14, 8, 11, 7), PackedInt32Array(14, 7, 6), PackedInt32Array(15, 14, 6), PackedInt32Array(15, 6, 12, 9), PackedInt32Array(9, 12, 13, 10)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -16, 1016, -32, 1000, 728, -40, 744)])
+agent_radius = 45.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xppu"]
 
 [node name="Main" type="Node2D" unique_id=1537072932]
 script = ExtResource("1_fdcud")
+
+[node name="UI" parent="." unique_id=16273567 instance=ExtResource("2_3yqt6")]
+
+[node name="Caldén" type="StaticBody2D" parent="." unique_id=1005089678]
+collision_mask = 6
+
+[node name="Sprite" type="Sprite2D" parent="Caldén" unique_id=1747561680]
+position = Vector2(544, -16)
+texture = ExtResource("5_3yqt6")
+
+[node name="Collision" type="CollisionShape2D" parent="Caldén" unique_id=202423785]
+position = Vector2(560, -32)
+shape = SubResource("RectangleShape2D_vdbgw")
+
+[node name="Area2D" type="Area2D" parent="Caldén" unique_id=773819987]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caldén/Area2D" unique_id=1504981294]
+position = Vector2(560, 16)
+shape = SubResource("RectangleShape2D_3yqt6")
+debug_color = Color(0.9756456, 0, 0.42138165, 0.41960785)
 
 [node name="Mapa" type="Node2D" parent="." unique_id=1554381430]
 
@@ -30,5 +63,35 @@ tile_set = ExtResource("2_qpgdo")
 [node name="Player" parent="." unique_id=1781514266 instance=ExtResource("2_sem21")]
 position = Vector2(456, 280)
 
+[node name="Pieza1" type="Area2D" parent="." unique_id=1614259994]
+position = Vector2(264, -16)
+collision_layer = 0
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="Pieza1" unique_id=1128981881]
+shape = SubResource("RectangleShape2D_0xppu")
+debug_color = Color(0, 0.64777815, 0.21015358, 0.41960785)
+
+[node name="Sprite" type="Sprite2D" parent="Pieza1" unique_id=1668798958]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_mbvap")
+
+[node name="Pieza2" type="Area2D" parent="." unique_id=1233313730]
+position = Vector2(920, -16)
+collision_layer = 0
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="Pieza2" unique_id=54162555]
+shape = SubResource("RectangleShape2D_0xppu")
+debug_color = Color(0, 0.64777815, 0.21015358, 0.41960785)
+
+[node name="Sprite" type="Sprite2D" parent="Pieza2" unique_id=507172937]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_mbvap")
+
 [node name="Potrillo" parent="." unique_id=909764345 instance=ExtResource("3_j5xpj")]
-position = Vector2(760, 192)
+position = Vector2(904, 144)
+
+[connection signal="body_entered" from="Caldén/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Pieza1" to="." method="_on_pieza_1_body_entered"]
+[connection signal="body_entered" from="Pieza2" to="." method="_on_pieza_2_body_entered"]
