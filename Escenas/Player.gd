@@ -1,14 +1,12 @@
 extends CharacterBody2D
 
 @export var speed = 300
+@export var Piezas = 0
+@export var InputOFF = false
 
 @onready var anim: AnimatedSprite2D = $Anim
 @onready var UI = get_tree().get_first_node_in_group("UI")
 @onready var Potrillo = get_tree().get_first_node_in_group("Potrillo")
-
-@export var Piezas = 0
-
-var InputOFF = false
 
 var last_direction: String = "Down"
 

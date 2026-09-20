@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 300
+@export var block = false
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("Player")
@@ -12,6 +13,10 @@ func _ready() -> void:
 	nav_agent.target_desired_distance = 10.0
 
 func _physics_process(_delta: float) -> void:
+	if block:
+		$Collision.disabled = true
+		return
+	
 	if player == null:
 		return
 	

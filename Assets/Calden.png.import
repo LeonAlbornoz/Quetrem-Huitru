@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h1ltr04p56fh"
-path="res://.godot/imported/Calden_Provisional.png-976c72ad0af8d67e08f3254871bfa656.ctex"
+uid="uid://da7n20ithot5i"
+path="res://.godot/imported/Calden.png-89e3843a040d56c815a1e900cf439288.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Calden_Provisional.png"
-dest_files=["res://.godot/imported/Calden_Provisional.png-976c72ad0af8d67e08f3254871bfa656.ctex"]
+source_file="res://Assets/Calden.png"
+dest_files=["res://.godot/imported/Calden.png-89e3843a040d56c815a1e900cf439288.ctex"]
 
 [params]
 
