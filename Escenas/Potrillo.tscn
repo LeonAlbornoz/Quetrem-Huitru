@@ -113,7 +113,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xppu"]
 size = Vector2(64, 64)
 
-[node name="Potrillo" type="CharacterBody2D" unique_id=909764345]
+[node name="Potrillo" type="CharacterBody2D" unique_id=909764345 groups=["Potrillo"]]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_8ial7")
 
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=1276825526]

@@ -3,12 +3,19 @@ extends CharacterBody2D
 @export var speed = 300
 
 @onready var anim: AnimatedSprite2D = $Anim
-
-var last_direction: String = "Down"
+@onready var UI = get_tree().get_first_node_in_group("UI")
+@onready var Potrillo = get_tree().get_first_node_in_group("Potrillo")
 
 @export var Piezas = 0
 
+var InputOFF = false
+
+var last_direction: String = "Down"
+
 func _physics_process(_delta: float) -> void:
+	if InputOFF:
+		return
+	
 	var direction: Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 	
 	if direction != Vector2.ZERO:
@@ -25,3 +32,10 @@ func _physics_process(_delta: float) -> void:
 		anim.play("Idle_" + last_direction)
 	
 	move_and_slide()
+
+func _on_muerte_body_entered(_body: Node2D) -> void:
+	UI.anim.play("Perdiste")
+	UI.get_node("Fade").visible = true
+	await get_tree().create_timer(0.4).timeout
+	Potrillo.queue_free()
+	queue_free()

@@ -297,7 +297,19 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "MENU"
 
+[node name="Opciones" type="Label" parent="." unique_id=1763181227]
+visible = false
+offset_left = 832.0
+offset_top = 328.0
+offset_right = 1395.0
+offset_bottom = 504.0
+theme_override_font_sizes/font_size = 30
+text = "aguanta, 
+no tenemos ni 
+sonido todavia"
+
 [connection signal="pressed" from="Main/Botones/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Main/Botones/Opciones?" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="Main/Botones/Salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="Reintentar/Reintentar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="Reintentar/Menu" to="." method="_on_menu_pressed"]
