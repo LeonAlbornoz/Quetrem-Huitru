@@ -1,0 +1,8 @@
+~ start
+Paisano: Uh... que buena siesta me eché...
+Paisano: Bueno, vamos a preparar unos verdes y arrancamo' nomá' pal pueblo
+- Levantarse y arrancar viaje
+	Paisano: Ahora si...
+- Seguir Echado
+	Paisano: Un ratito mas no le hace mal a nadie..
+=> END

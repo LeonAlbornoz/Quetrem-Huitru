@@ -114,6 +114,7 @@ animations = [{
 size = Vector2(64, 64)
 
 [node name="Potrillo" type="CharacterBody2D" unique_id=909764345 groups=["Potrillo"]]
+scale = Vector2(8, 8)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_8ial7")
