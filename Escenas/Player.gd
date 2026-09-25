@@ -3,12 +3,24 @@ extends CharacterBody2D
 @export var speed = 1500
 @export var Piezas = 0
 @export var InputOFF = false
+const DIALOGUE = preload("uid://btp44lxu4vgap")
 
 @onready var anim: AnimatedSprite2D = $Anim
 @onready var UI = get_tree().get_first_node_in_group("UI")
 @onready var Potrillo = get_tree().get_first_node_in_group("Potrillo")
 
 var last_direction: String = "Down"
+var is_dialogue_active = false
+
+func _ready():
+	DialogueManager.dialogue_started.connect(_on_dialogue_started)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_accept") and not is_dialogue_active:
+		DialogueManager.show_dialogue_balloon(DIALOGUE, "start")
+
 
 func _physics_process(_delta: float) -> void:
 	if InputOFF:
@@ -37,3 +49,9 @@ func _on_muerte_body_entered(_body: Node2D) -> void:
 	await get_tree().create_timer(0.4).timeout
 	Potrillo.queue_free()
 	queue_free()
+
+func _on_dialogue_started(dialogue):
+	is_dialogue_active = true
+	
+func _on_dialogue_ended(dialogue):
+	is_dialogue_active = false
