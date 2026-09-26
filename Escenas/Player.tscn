@@ -5,7 +5,19 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wwpud"]
 atlas = ExtResource("3_c1rio")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj1in"]
+atlas = ExtResource("3_c1rio")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tpbs"]
+atlas = ExtResource("3_c1rio")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjle3"]
+atlas = ExtResource("3_c1rio")
+region = Rect2(96, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c1rio"]
 atlas = ExtResource("3_c1rio")
@@ -88,10 +100,19 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wwpud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj1in")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tpbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjle3")
 }],
 "loop": 1,
 "name": &"Idle_Down",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -197,7 +218,6 @@ scale = Vector2(5, 5)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_wwpud")
-speed = 1200
 
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=33832969]
 scale = Vector2(3, 3)

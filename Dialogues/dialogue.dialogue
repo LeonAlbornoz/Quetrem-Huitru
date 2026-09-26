@@ -6,3 +6,10 @@ Paisano: Bueno, vamos a preparar unos verdes y arrancamo' nomá' pal pueblo
 - Seguir Echado
 	Paisano: Un ratito mas no le hace mal a nadie..
 => END
+
+~ SinPiezas
+Paisano: uh che, eh verda que me faltaban la piezas esas
+- Tomar un mate antes de buscar
+	Paisano: *Ruido de Mate*
+- Arrancar noma'
+=> END

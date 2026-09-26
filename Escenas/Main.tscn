@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cq0eqwjqvfwq8" path="res://Escenas/Player.tscn" id="2_sem21"]
 [ext_resource type="PackedScene" uid="uid://n1wnplsf2l4w" path="res://Escenas/Potrillo.tscn" id="3_j5xpj"]
 [ext_resource type="Texture2D" uid="uid://da7n20ithot5i" path="res://Assets/Calden.png" id="4_r8q0l"]
+[ext_resource type="Texture2D" uid="uid://dipru1k50jfcu" path="res://Assets/TRONCO ÁRBOL 1.png" id="5_3ihj5"]
 [ext_resource type="Texture2D" uid="uid://0nw4121lcnxx" path="res://Assets/FONDO_SIN_CAMINO.png" id="5_a5a2i"]
 [ext_resource type="Texture2D" uid="uid://b2dari443sc26" path="res://Assets/CAMINOS.png" id="6_3ihj5"]
-[ext_resource type="Texture2D" uid="uid://befgqnan5wbks" path="res://icon.svg" id="6_mbvap"]
+[ext_resource type="Texture2D" uid="uid://bt0qt51deqvsw" path="res://Assets/COFRE.png" id="7_bgy44"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vdbgw"]
 vertices = PackedVector2Array(5362, 2982, -5349.3203, 2982, -5392.672, -2985, 5362, -2985)
@@ -16,12 +17,13 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-5438, -3030, 5407, -30
 agent_radius = 45.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdbgw"]
-size = Vector2(45, 66)
+size = Vector2(19.636345, 24.272667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3yqt6"]
-size = Vector2(85.333374, 42)
+size = Vector2(98.909134, 48.000008)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xppu"]
+size = Vector2(176, 138.5)
 
 [sub_resource type="Animation" id="Animation_r8q0l"]
 resource_name = "Inicio"
@@ -547,12 +549,6 @@ _data = {
 &"RESET": SubResource("Animation_bgy44")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_juvqy"]
-size = Vector2(368, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mh6fj"]
-size = Vector2(368, 64)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8q0l"]
 size = Vector2(14, 424)
 
@@ -560,40 +556,16 @@ size = Vector2(14, 424)
 size = Vector2(734, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5w2j"]
-size = Vector2(891, 29)
+size = Vector2(16, 400)
 
 [node name="Main" type="Node2D" unique_id=1537072932]
+y_sort_enabled = true
 script = ExtResource("1_fdcud")
 
 [node name="UI" parent="." unique_id=16273567 instance=ExtResource("2_3yqt6")]
 
 [node name="Mapa" type="Node2D" parent="." unique_id=1554381430]
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Mapa" unique_id=936781580]
-navigation_polygon = SubResource("NavigationPolygon_vdbgw")
-
-[node name="Caldén" type="StaticBody2D" parent="Mapa" unique_id=1005089678]
-position = Vector2(-1056, -1984.0001)
-scale = Vector2(3, 3)
-collision_mask = 6
-
-[node name="Sprite" type="Sprite2D" parent="Mapa/Caldén" unique_id=1747561680]
-position = Vector2(544, -16)
-texture = ExtResource("4_r8q0l")
-
-[node name="Collision" type="CollisionShape2D" parent="Mapa/Caldén" unique_id=202423785]
-position = Vector2(544, 0)
-shape = SubResource("RectangleShape2D_vdbgw")
-
-[node name="Area2D" type="Area2D" parent="Mapa/Caldén" unique_id=773819987]
-position = Vector2(-18.666668, 18.666687)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/Caldén/Area2D" unique_id=1504981294]
-position = Vector2(562.66675, 2.6666565)
-shape = SubResource("RectangleShape2D_3yqt6")
-debug_color = Color(0.9756456, 0, 0.42138165, 0.41960785)
+z_index = -10
 
 [node name="FondoSinCamino" type="Sprite2D" parent="Mapa" unique_id=475830810]
 scale = Vector2(8.491667, 8.491667)
@@ -604,28 +576,69 @@ position = Vector2(-0.706604, -4.474987)
 scale = Vector2(0.9951342, 0.99513406)
 texture = ExtResource("6_3ihj5")
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Mapa" unique_id=936781580]
+navigation_polygon = SubResource("NavigationPolygon_vdbgw")
+
+[node name="Caldén" type="StaticBody2D" parent="." unique_id=1005089678]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-4088.0005, 1600.0001)
+scale = Vector2(11, 11)
+collision_mask = 6
+
+[node name="Sprite" type="Sprite2D" parent="Caldén" unique_id=1747561680]
+position = Vector2(4.4822693e-05, 21.818111)
+texture = ExtResource("4_r8q0l")
+offset = Vector2(0, -22)
+
+[node name="Collision" type="CollisionShape2D" parent="Caldén" unique_id=202423785]
+position = Vector2(0.36346436, 21.818176)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_vdbgw")
+
+[node name="Area2D" type="Area2D" parent="Caldén" unique_id=773819987]
+position = Vector2(13.333313, 21.333275)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caldén/Area2D" unique_id=1504981294]
+position = Vector2(-11.878732, -14.78783)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_3yqt6")
+debug_color = Color(0.9756456, 0, 0.42138165, 0.41960785)
+
+[node name="TroncoÁrbol1" type="Sprite2D" parent="." unique_id=1868795164]
+z_index = 1
+position = Vector2(144, -2944)
+scale = Vector2(5, 5)
+texture = ExtResource("5_3ihj5")
+
 [node name="Player" parent="." unique_id=1781514266 instance=ExtResource("2_sem21")]
-position = Vector2(-53.99994, -2755)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-64.00002, -2648)
 speed = 1000
+metadata/_edit_group_ = true
 
 [node name="Camera2D" parent="Player" index="2" unique_id=1609742488]
 zoom = Vector2(0.3, 0.3)
 
 [node name="Pieza1" type="Area2D" parent="." unique_id=1614259994]
-position = Vector2(3744, 1753)
+position = Vector2(4240, 1728)
 collision_layer = 0
 collision_mask = 2
 
 [node name="Collision" type="CollisionShape2D" parent="Pieza1" unique_id=1128981881]
+position = Vector2(0, -0.25)
 shape = SubResource("RectangleShape2D_0xppu")
 debug_color = Color(0, 0.64777815, 0.21015358, 0.41960785)
 
 [node name="Sprite" type="Sprite2D" parent="Pieza1" unique_id=1668798958]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_mbvap")
+scale = Vector2(7, 7)
+texture = ExtResource("7_bgy44")
 
 [node name="Pieza2" type="Area2D" parent="." unique_id=1233313730]
-position = Vector2(4520, 1767)
+position = Vector2(-80, 2352)
 collision_layer = 0
 collision_mask = 2
 
@@ -634,8 +647,8 @@ shape = SubResource("RectangleShape2D_0xppu")
 debug_color = Color(0, 0.64777815, 0.21015358, 0.41960785)
 
 [node name="Sprite" type="Sprite2D" parent="Pieza2" unique_id=507172937]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_mbvap")
+scale = Vector2(7, 7)
+texture = ExtResource("7_bgy44")
 
 [node name="Potrillo" parent="." unique_id=909764345 instance=ExtResource("3_j5xpj")]
 visible = false
@@ -649,33 +662,23 @@ animation = &"Walk_Up"
 libraries/ = SubResource("AnimationLibrary_r8q0l")
 
 [node name="Fade" type="ColorRect" parent="." unique_id=1613689726]
+visible = false
+z_index = 5
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 1200.0
-offset_bottom = 700.0
+offset_left = -2088.0
+offset_top = -3784.0
+offset_right = 1912.0
+offset_bottom = -1484.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1808404238]
-
-[node name="BlockCalden" type="Area2D" parent="." unique_id=975138384]
-collision_mask = 2
-
-[node name="StaticBody2D" type="StaticBody2D" parent="BlockCalden" unique_id=1554339291]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockCalden/StaticBody2D" unique_id=2030834675]
-position = Vector2(576, 1076)
-shape = SubResource("RectangleShape2D_juvqy")
-debug_color = Color(0.9645545, 6.738305e-07, 0.49494076, 0.41960785)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockCalden" unique_id=516384091]
-position = Vector2(576, 1071)
-shape = SubResource("RectangleShape2D_mh6fj")
 
 [node name="DeadPotrillo" type="Area2D" parent="." unique_id=1732243395]
 collision_mask = 4
@@ -693,20 +696,18 @@ position = Vector2(-4243, 1003)
 shape = SubResource("RectangleShape2D_bgy44")
 
 [node name="PasilloCalden" type="Area2D" parent="." unique_id=1130688201]
-position = Vector2(137, -676)
+position = Vector2(-2536, -160)
 collision_layer = 0
 collision_mask = 2
 
 [node name="Collision" type="CollisionShape2D" parent="PasilloCalden" unique_id=891001617]
-position = Vector2(-186.5, 4.5)
 shape = SubResource("RectangleShape2D_r5w2j")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1194549598]
 
-[connection signal="body_entered" from="Mapa/Caldén/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Caldén/Area2D" to="." method="Calden"]
 [connection signal="body_entered" from="Pieza1" to="." method="_on_pieza_1_body_entered"]
 [connection signal="body_entered" from="Pieza2" to="." method="_on_pieza_2_body_entered"]
-[connection signal="body_entered" from="BlockCalden" to="." method="_BlockCalden"]
 [connection signal="body_entered" from="DeadPotrillo" to="." method="DeadPotrillo"]
 [connection signal="body_entered" from="PasilloCalden" to="." method="PasilloCalden"]
 

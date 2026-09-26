@@ -1,6 +1,24 @@
 [gd_scene format=3 uid="uid://18yhnywbge6c"]
 
 [ext_resource type="Script" uid="uid://xxer3cmfl1po" path="res://Escenas/UI.gd" id="1_cfecb"]
+[ext_resource type="Texture2D" uid="uid://efmee70wh72n" path="res://Assets/FONDO_MENÚ.png" id="2_j5fs4"]
+[ext_resource type="Texture2D" uid="uid://bs68k5f26dmsd" path="res://Assets/UI_BOTON_0001.png" id="3_boton1"]
+[ext_resource type="Texture2D" uid="uid://cnh882c10wwyv" path="res://Assets/UI_BOTON_0002.png" id="4_boton2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s021a"]
+texture = ExtResource("3_boton1")
+expand_margin_top = 60.0
+expand_margin_bottom = 80.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_pressed"]
+texture = ExtResource("4_boton2")
+expand_margin_top = 60.0
+expand_margin_bottom = 80.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_normal"]
+texture = ExtResource("3_boton1")
+expand_margin_top = 60.0
+expand_margin_bottom = 80.0
 
 [sub_resource type="Animation" id="Animation_g0drk"]
 resource_name = "Ganaste"
@@ -100,18 +118,6 @@ _data = {
 [node name="UI" type="CanvasLayer" unique_id=16273567 groups=["UI"]]
 script = ExtResource("1_cfecb")
 
-[node name="Ganaste" type="Label" parent="." unique_id=75046951]
-visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -36.5
-offset_top = 80.0
-offset_right = 36.5
-offset_bottom = 103.0
-grow_horizontal = 2
-text = "GANASTE"
-
 [node name="Main" type="Control" parent="." unique_id=2122783655]
 layout_mode = 3
 anchors_preset = 15
@@ -120,27 +126,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="ColorRect" parent="Main" unique_id=673581843]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.1159, 0.20648491, 0.61, 0.78431374)
-
-[node name="Titulo" type="Label" parent="Main" unique_id=898916212]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -309.5
-offset_top = 41.0
-offset_right = 309.5
-offset_bottom = 151.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 80
-text = "Quetrém Huitrú"
+[node name="FondoMenú" type="Sprite2D" parent="Main" unique_id=435931629]
+position = Vector2(577.44525, 323.62497)
+scale = Vector2(0.1853572, 0.18535714)
+texture = ExtResource("2_j5fs4")
 
 [node name="Botones" type="VBoxContainer" parent="Main" unique_id=516655976]
 layout_mode = 1
@@ -149,10 +138,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -192.0
-offset_top = -130.0
-offset_right = 192.0
-offset_bottom = 250.0
+offset_left = -488.0
+offset_top = 60.0
+offset_right = -104.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -160,20 +149,23 @@ theme_override_constants/separation = 40
 [node name="Iniciar" type="Button" parent="Main/Botones" unique_id=1317927339]
 custom_minimum_size = Vector2(180, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_s021a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_normal")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_btn_normal")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_normal")
 text = "INICIAR"
-
-[node name="Opciones?" type="Button" parent="Main/Botones" unique_id=1900415875]
-custom_minimum_size = Vector2(180, 100)
-layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "OPCIONES?
-"
 
 [node name="Salir" type="Button" parent="Main/Botones" unique_id=594542022]
 custom_minimum_size = Vector2(180, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_normal")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_normal")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_btn_normal")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_normal")
 text = "SALIR
 "
 
@@ -297,19 +289,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "MENU"
 
-[node name="Opciones" type="Label" parent="." unique_id=1763181227]
-visible = false
-offset_left = 832.0
-offset_top = 328.0
-offset_right = 1395.0
-offset_bottom = 504.0
-theme_override_font_sizes/font_size = 30
-text = "aguanta, 
-no tenemos ni 
-sonido todavia"
-
 [connection signal="pressed" from="Main/Botones/Iniciar" to="." method="_on_iniciar_pressed"]
-[connection signal="pressed" from="Main/Botones/Opciones?" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="Main/Botones/Salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="Reintentar/Reintentar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="Reintentar/Menu" to="." method="_on_menu_pressed"]
