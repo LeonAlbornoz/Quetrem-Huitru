@@ -16,7 +16,7 @@ func _ready():
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
-### SI QUERES QUE VUELVA A APARECER EL TEXTO CON EL ESPACIO SACA # EN EL PROCESS ###
+### SI QUERES QUE VUELVA A APARECER EL TEXTO CON EL ESPACIO SACA 	# EN EL PROCESS ###
 
 #func _process(_delta: float) -> void:
 	#if Input.is_action_just_pressed("ui_accept") and not is_dialogue_active:

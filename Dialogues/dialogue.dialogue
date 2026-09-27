@@ -1,10 +1,24 @@
-~ start
+~ Comienzo
 Paisano: Uh... que buena siesta me eché...
 Paisano: Bueno, vamos a preparar unos verdes y arrancamo' nomá' pal pueblo
 - Levantarse y arrancar viaje
 	Paisano: Ahora si...
 - Seguir Echado
 	Paisano: Un ratito mas no le hace mal a nadie..
+	=> Comienzo
+=> END
+
+~ VaSaliendo
+Paisano: Cierto que en este lugar hace tiempo estaba la leyenda del Potrillo oscuro..no me acuerdo si tenia un calden o si era un piquillin el arbol del caballo, pero bue. anda a saber en esos tiempos hacian cualquier cosa para pasar el rato..
+Paisano: Que calor che, esta aspero.. paso por el pueblucho a preparar todo
+Paisano: *Ruido de Mate* Bueno ahora si, entramo en calor y salimo'
+=> END
+
+~ VeAlPotrillo
+Paisano: Y eso?. Un caballo por esta zona?. No pará, el potrillo?
+Paisano: Uuuh, y que hacemo' ahora?
+Paisano: pera, para el potrillo este no habia que poner una cruz en un calden??
+Paisano: arrancamo noma' a busca la piezas esas
 => END
 
 ~ SinPiezas
@@ -12,4 +26,12 @@ Paisano: uh che, eh verda que me faltaban la piezas esas
 - Tomar un mate antes de buscar
 	Paisano: *Ruido de Mate*
 - Arrancar noma'
+=> END
+
+~ UnaPieza
+Paisano: mira aca ta' la cruz... ta' rota!, parece que le falta la otra mitad, bueno vamo' a buscarla
+=> END
+
+~ DosPiezas
+Paisano: aca estaaa, ya tengo la cruz completa, vamo pal calden
 => END

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://efmee70wh72n" path="res://Assets/FONDO_MENÚ.png" id="2_j5fs4"]
 [ext_resource type="Texture2D" uid="uid://bs68k5f26dmsd" path="res://Assets/UI_BOTON_0001.png" id="3_boton1"]
 [ext_resource type="Texture2D" uid="uid://cnh882c10wwyv" path="res://Assets/UI_BOTON_0002.png" id="4_boton2"]
+[ext_resource type="Texture2D" uid="uid://ehx1r3ev0lq8" path="res://Assets/SIN_TEXTO_FONDO_MENÚ.png" id="5_ukrey"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s021a"]
 texture = ExtResource("3_boton1")
@@ -26,26 +27,50 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Fade/BG:color")
+tracks/0/path = NodePath("Victoria:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Victoria:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade/BG2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.35, 0.35, 0.35, 0), Color(0.35, 0.35, 0.35, 1), Color(0.35, 0.35, 0.35, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Victoria/Texto:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Victoria/Menu:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_cfecb"]
@@ -70,26 +95,62 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Fade/BG:color")
+tracks/0/path = NodePath("Reintentar:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Reintentar:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade/BG2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.35, 0.35, 0.35, 0), Color(0.35, 0.35, 0.35, 1), Color(0.35, 0.35, 0.35, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Reintentar/Texto:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Reintentar/Reintentar:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Reintentar/Menu:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ysecq"]
@@ -106,6 +167,78 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade/BG2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.35, 0.35, 0.35, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Reintentar/Texto:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Reintentar/Reintentar:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Reintentar/Menu:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Victoria/Texto:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Victoria/Menu:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ysecq"]
 _data = {
@@ -114,6 +247,46 @@ _data = {
 &"Perdiste": SubResource("Animation_j5fs4"),
 &"RESET": SubResource("Animation_ysecq")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gj2ju"]
+texture = ExtResource("3_boton1")
+expand_margin_top = 60.0
+expand_margin_bottom = 80.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xg42q"]
+texture = ExtResource("4_boton2")
+expand_margin_top = 60.0
+expand_margin_bottom = 80.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ig2kn"]
+texture = ExtResource("4_boton2")
+expand_margin_top = 60.0
+expand_margin_bottom = 80.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqu2x"]
+texture = ExtResource("3_boton1")
+expand_margin_top = 60.0
+expand_margin_bottom = 80.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0aokd"]
+texture = ExtResource("4_boton2")
+expand_margin_top = 60.0
+expand_margin_bottom = 80.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j5fs4"]
+texture = ExtResource("3_boton1")
+expand_margin_top = 60.0
+expand_margin_bottom = 80.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ukrey"]
+texture = ExtResource("4_boton2")
+expand_margin_top = 60.0
+expand_margin_bottom = 80.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u12ih"]
+texture = ExtResource("4_boton2")
+expand_margin_top = 60.0
+expand_margin_bottom = 80.0
 
 [node name="UI" type="CanvasLayer" unique_id=16273567 groups=["UI"]]
 script = ExtResource("1_cfecb")
@@ -127,7 +300,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FondoMenú" type="Sprite2D" parent="Main" unique_id=435931629]
-position = Vector2(577.44525, 323.62497)
+position = Vector2(576.44525, 324.62497)
 scale = Vector2(0.1853572, 0.18535714)
 texture = ExtResource("2_j5fs4")
 
@@ -177,6 +350,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="BG2" type="Sprite2D" parent="Fade" unique_id=778810573]
+modulate = Color(0.35, 0.35, 0.35, 0)
+position = Vector2(575.68634, 323.62503)
+scale = Vector2(0.18522055, 0.18535714)
+texture = ExtResource("5_ukrey")
+
 [node name="BG" type="ColorRect" parent="Fade" unique_id=1621321454]
 layout_mode = 1
 anchors_preset = 15
@@ -200,6 +379,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Texto" type="Label" parent="Reintentar" unique_id=354991695]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -210,12 +390,13 @@ offset_right = 138.0
 offset_bottom = 199.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
-text = "EL POTRILLO TE ALCANZO, PERDISTE
-                                  î
-                   (poner otra cosa)"
+text = "EL POTRILLO TE ALCANZO"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Reintentar" type="Button" parent="Reintentar" unique_id=555864521]
-custom_minimum_size = Vector2(260, 80)
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -228,11 +409,15 @@ offset_right = 130.0
 offset_bottom = -144.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_gj2ju")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xg42q")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ig2kn")
 text = "REINTENTAR"
 
 [node name="Menu" type="Button" parent="Reintentar" unique_id=529617302]
-custom_minimum_size = Vector2(260, 80)
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -245,7 +430,10 @@ offset_right = 130.0
 offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_bqu2x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0aokd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ig2kn")
 text = "MENU"
 
 [node name="Victoria" type="Control" parent="." unique_id=1823126316]
@@ -258,6 +446,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Texto" type="Label" parent="Victoria" unique_id=1140277556]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -268,11 +457,12 @@ offset_right = 20.0
 offset_bottom = 135.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
-text = "EL POTRILLO NO VOLVERA, GANASTE
-                                 î
-                   (nose que poner)"
+text = "EL POTRILLO NO VOLVERA"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Menu" type="Button" parent="Victoria" unique_id=1342504298]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 1
 anchors_preset = 7
@@ -286,7 +476,10 @@ offset_right = 150.0
 offset_bottom = -152.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_j5fs4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ukrey")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u12ih")
 text = "MENU"
 
 [connection signal="pressed" from="Main/Botones/Iniciar" to="." method="_on_iniciar_pressed"]
