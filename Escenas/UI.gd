@@ -6,6 +6,7 @@ func _ready() -> void:
 	$Reintentar.visible = false
 	$Victoria.visible = false
 	$Fade.visible = false
+	$Creditos.visible = false
 
 func _on_iniciar_pressed() -> void:
 	if not $Fade.visible:
@@ -19,3 +20,9 @@ func _on_salir_pressed() -> void:
 
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Escenas/UI.tscn")
+
+func _on_creditos_pressed() -> void:
+	$Creditos.visible = true
+
+func _on_creditos_volver_pressed() -> void:
+	$Creditos.visible = false

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://xxer3cmfl1po" path="res://Escenas/UI.gd" id="1_cfecb"]
 [ext_resource type="Texture2D" uid="uid://efmee70wh72n" path="res://Assets/FONDO_MENÚ.png" id="2_j5fs4"]
 [ext_resource type="Texture2D" uid="uid://bs68k5f26dmsd" path="res://Assets/UI_BOTON_0001.png" id="3_boton1"]
+[ext_resource type="FontFile" uid="uid://bl0whf7pykyht" path="res://Assets/AkayaKanadaka-Regular.ttf" id="3_s021a"]
 [ext_resource type="Texture2D" uid="uid://cnh882c10wwyv" path="res://Assets/UI_BOTON_0002.png" id="4_boton2"]
 [ext_resource type="Texture2D" uid="uid://ehx1r3ev0lq8" path="res://Assets/SIN_TEXTO_FONDO_MENÚ.png" id="5_ukrey"]
 
@@ -322,6 +323,7 @@ theme_override_constants/separation = 40
 [node name="Iniciar" type="Button" parent="Main/Botones" unique_id=1317927339]
 custom_minimum_size = Vector2(180, 100)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_s021a")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxTexture_s021a")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_pressed")
@@ -333,6 +335,7 @@ text = "INICIAR"
 [node name="Salir" type="Button" parent="Main/Botones" unique_id=594542022]
 custom_minimum_size = Vector2(180, 100)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_s021a")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxTexture_btn_normal")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_pressed")
@@ -341,6 +344,29 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_btn_normal")
 theme_override_styles/focus = SubResource("StyleBoxTexture_btn_normal")
 text = "SALIR
 "
+
+[node name="CreditosBtn" type="Button" parent="Main" unique_id=771234567]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -112.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_s021a")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_normal")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_normal")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_btn_normal")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_normal")
+text = "CREDITOS"
 
 [node name="Fade" type="Control" parent="." unique_id=1641082691]
 layout_mode = 3
@@ -389,6 +415,7 @@ offset_top = 176.0
 offset_right = 138.0
 offset_bottom = 199.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_s021a")
 theme_override_font_sizes/font_size = 40
 text = "EL POTRILLO TE ALCANZO"
 horizontal_alignment = 1
@@ -409,6 +436,7 @@ offset_right = 130.0
 offset_bottom = -144.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_s021a")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxTexture_gj2ju")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_xg42q")
@@ -430,6 +458,7 @@ offset_right = 130.0
 offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_s021a")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxTexture_bqu2x")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0aokd")
@@ -456,6 +485,7 @@ offset_top = 112.0
 offset_right = 20.0
 offset_bottom = 135.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_s021a")
 theme_override_font_sizes/font_size = 40
 text = "EL POTRILLO NO VOLVERA"
 horizontal_alignment = 1
@@ -476,14 +506,114 @@ offset_right = 150.0
 offset_bottom = -152.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_s021a")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxTexture_j5fs4")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ukrey")
 theme_override_styles/hover = SubResource("StyleBoxTexture_u12ih")
 text = "MENU"
 
+[node name="Creditos" type="Control" parent="." unique_id=882345678]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="Creditos" unique_id=882345679]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.9)
+
+[node name="Texto" type="Label" parent="Creditos" unique_id=882345680]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -679.5
+offset_top = 16.0
+offset_right = 679.5
+offset_bottom = 528.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_s021a")
+theme_override_font_sizes/font_size = 20
+text = "CREDITOS
+Valen- Game designer
+Agu (Mizuki)- Arte 2D 
+León - Programación
+Bladi - Programación - Sonido
+
+Este juego está basado en la leyenda “El Potrillo Oscuro”
+
+Stieben, E. 3. (1951). Hualicho Mapu: Leyendas, Cuentos y Relatos de la Pampa Misteriosa. Buenos Aires : Albatros. 
+"
+horizontal_alignment = 1
+
+[node name="Volver" type="Button" parent="Creditos" unique_id=882345681]
+custom_minimum_size = Vector2(260, 80)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -128.0
+offset_right = 130.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_s021a")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_normal")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_normal")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_btn_normal")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_normal")
+text = "VOLVER"
+
+[node name="Texto2" type="Label" parent="Creditos" unique_id=988289237]
+layout_mode = 0
+offset_left = -720.0
+offset_top = 224.0
+offset_right = 1876.0
+offset_bottom = 429.0
+theme_override_fonts/font = ExtResource("3_s021a")
+theme_override_font_sizes/font_size = 20
+text = "
+El nombre y su historia fué extraído de:
+Casamiquela, Rodolfo Magín (2005) Toponimia indígena de la Provincia de La Pampa 
+Rodolfo Magín Casamiquela - La Pampa Cooperativa Popular de Electricidad 2005 - 149 p. ISBN:987-22485-0-8 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto3" type="Label" parent="Creditos" unique_id=656077074]
+layout_mode = 0
+offset_left = -512.0
+offset_top = 352.0
+offset_right = 1661.0
+offset_bottom = 510.0
+theme_override_fonts/font = ExtResource("3_s021a")
+text = "
+Fotografía del menú
+Archivo Histórico Provincial “Prof. Fernando E. Aráoz” – Santa Rosa, La Pampa - Argentina  “Circa 1900. Santa Rosa de Toay.
+ Un sector de la estancia La Malvina, propiedad del fundador Tomás Mason.
+ En la fotografía se destaca un ejemplar de caldén y apoyado al mismo una tranquera. A la izquierda, un perro y sobre la derecha un carro.”
+Colección Enriqueta Schmidt 
+López Castro/Luchese/Rodríguez. 2006. Ejemplar de \"caldén\" (Prosopis caldenia) en primer plano. Detrás un bosquecito de la misma especie. Investigación: Aníbal Prina (2007)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Main/Botones/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="Main/Botones/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Main/CreditosBtn" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="Reintentar/Reintentar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="Reintentar/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="Victoria/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Creditos/Volver" to="." method="_on_creditos_volver_pressed"]

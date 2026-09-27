@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpxiq01j44l6d"]
 
 [ext_resource type="Script" uid="uid://cdav56uss0vgs" path="res://Escenas/Dialogue/balloon.gd" id="1_36de5"]
+[ext_resource type="FontFile" uid="uid://bl0whf7pykyht" path="res://Assets/AkayaKanadaka-Regular.ttf" id="2_8bsx1"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
 
@@ -64,7 +65,8 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
-default_font_size = 20
+default_font = ExtResource("2_8bsx1")
+default_font_size = 26
 Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
 Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
 Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
