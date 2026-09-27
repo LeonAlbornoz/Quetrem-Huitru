@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cu83vlvfom7oo" path="res://Assets/Barril.png" id="7_3ihj5"]
 [ext_resource type="Texture2D" uid="uid://bt0qt51deqvsw" path="res://Assets/COFRE.png" id="7_bgy44"]
 [ext_resource type="Texture2D" uid="uid://cs3ka6sxebnwg" path="res://Assets/CRUZ_CLAVADA.png" id="12_u12ih"]
+[ext_resource type="AudioStream" uid="uid://djg8w34xjgep8" path="res://audio/musica/sonido quetrem final.mp3" id="13_ig2kn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vdbgw"]
 vertices = PackedVector2Array(-882, 1934, -882, 2062, -1138, 2062, -3918, 2034, -3918, 1614, 754, 2802, 818, 2674, 4558, 2546, 4978, 2546, 5357, 2977, 4750, 1358, 4750, 1870, 4430, 1870, 3890, 1778, 3890, 1038, 5357, -2980, 5106, 2418, 5106, 1550, 4558, 2418, 818, 2446, 4430, 2418, 370, -2766, 370, -2980, 5042, 1358, 5042, 1550, 3150, 1038, 3150, 1842, 3214, 1842, 3214, 1870, 2958, 1870, 3314, 2226, 3314, 1970, 3442, 1970, 3442, 1906, 3506, 1906, 3506, 1778, 754, 2446, 754, 2318, 690, 2318, 690, 2254, 334, 2254, 334, 2318, 270, 2318, -526, 1614, 270, 2382, 206, 2382, 206, 2446, 78, 2446, 78, 2510, 14, 2510, 14, 2802, -526, 2802, -754, 1614, -754, 1934, -5387.633, -2980, -1138, 2674, -946, 2674, -946, 2802, -5344.3594, 2977, 754, 2674, 4978, 2418, -50, -2980, -50, -2766, -4274, 2034, 2958, 2226, -4274, 1614)
@@ -504,6 +505,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [800]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Potrillo/GalopeAudio:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_3ihj5"]
 resource_name = "Pieza2"
@@ -628,6 +641,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"Idle_Down"]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Potrillo/GalopeAudio:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_bgy44"]
@@ -836,6 +861,42 @@ tracks/16/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Potrillo/RelinchoAudio:autoplay")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Potrillo/RelinchoAudio:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Potrillo/GalopeAudio:playing")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_u12ih"]
 resource_name = "VaSaliendo"
@@ -941,6 +1002,42 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1840, 2050)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/path = NodePath("Potrillo/RelinchoAudio:autoplay")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Potrillo/RelinchoAudio:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Potrillo/GalopeAudio:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(-0.20000005),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r8q0l"]
@@ -1192,14 +1289,16 @@ position = Vector2(360, 160)
 shape = SubResource("RectangleShape2D_r5w2j")
 debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1194549598]
-
 [node name="CruzClavada" type="Sprite2D" parent="." unique_id=1970310668]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3960, 2152)
 scale = Vector2(8.5, 8.5)
 texture = ExtResource("12_u12ih")
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="." unique_id=1654901045]
+stream = ExtResource("13_ig2kn")
+volume_db = -12.0
 
 [connection signal="body_entered" from="Mapa/Otros/Caldén/Area2D" to="." method="Calden"]
 [connection signal="body_entered" from="Pieza1" to="." method="_on_pieza_1_body_entered"]

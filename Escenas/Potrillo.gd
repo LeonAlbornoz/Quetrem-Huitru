@@ -1,7 +1,7 @@
 extends CharacterBody2D
-
 @export var speed = 1000
 @export var block = false
+
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("Player")
@@ -39,3 +39,5 @@ func _physics_process(_delta: float) -> void:
 			anim.play("Walk_Up")
 	
 	move_and_slide()
+	
+#

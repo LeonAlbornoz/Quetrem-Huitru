@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqknmtf2snqsa"
+path="res://.godot/imported/bombo intro.mp3-af60988ff53d275b8e2d30827b6815bf.mp3str"
+
+[deps]
+
+source_file="res://audio/musica/bombo intro.mp3"
+dest_files=["res://.godot/imported/bombo intro.mp3-af60988ff53d275b8e2d30827b6815bf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

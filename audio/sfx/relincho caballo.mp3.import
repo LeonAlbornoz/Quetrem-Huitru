@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d28iyy6lcg4oc"
+path="res://.godot/imported/relincho caballo.mp3-19f00966d7e21df954ab21a85a9e1acf.mp3str"
+
+[deps]
+
+source_file="res://audio/sfx/relincho caballo.mp3"
+dest_files=["res://.godot/imported/relincho caballo.mp3-19f00966d7e21df954ab21a85a9e1acf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

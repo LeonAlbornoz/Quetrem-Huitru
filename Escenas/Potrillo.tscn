@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://wg253tro8di0" path="res://Escenas/Potrillo.gd" id="1_8ial7"]
 [ext_resource type="Texture2D" uid="uid://c7rhh34dwa7pv" path="res://Assets/Potrillo.png" id="3_6i2q3"]
+[ext_resource type="AudioStream" uid="uid://cp13ftm4ky1ua" path="res://audio/sfx/galope caballo.mp3" id="3_gyn6o"]
+[ext_resource type="AudioStream" uid="uid://d28iyy6lcg4oc" path="res://audio/sfx/relincho caballo.mp3" id="4_gyn6o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6i2q3"]
 atlas = ExtResource("3_6i2q3")
@@ -131,3 +133,13 @@ shape = SubResource("RectangleShape2D_0xppu")
 debug_color = Color(0.68851364, 0.4978866, 3.85046e-07, 0.41960785)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=277796244]
+
+[node name="GalopeAudio" type="AudioStreamPlayer2D" parent="." unique_id=515477625]
+stream = ExtResource("3_gyn6o")
+max_distance = 1257.0
+parameters/looping = false
+
+[node name="RelinchoAudio" type="AudioStreamPlayer2D" parent="." unique_id=2040165977]
+stream = ExtResource("4_gyn6o")
+max_distance = 1200.0
+parameters/looping = false

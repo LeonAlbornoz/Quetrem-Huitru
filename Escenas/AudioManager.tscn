@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://co07pe4suqxac"]
+
+[ext_resource type="Script" uid="uid://di0wkbqat2c0j" path="res://Escenas/audio_manager.gd" id="1_mql0j"]
+
+[node name="AudioManager" type="Node" unique_id=2103039569]
+script = ExtResource("1_mql0j")
+
+[node name="Galope" type="AudioStreamPlayer" parent="." unique_id=480662912]
+
+[node name="Relincho" type="AudioStreamPlayer" parent="." unique_id=662045867]

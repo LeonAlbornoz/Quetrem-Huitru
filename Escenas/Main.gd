@@ -3,10 +3,16 @@ extends Node2D
 @onready var UI = $UI
 @onready var Player = $Player
 @onready var anim: AnimationPlayer = $Animacion
+@onready var gameMusic = $GameMusic
+@onready var Potrillo = $Potrillo
+@onready var audioManager = $"/root/AudioManager"
 
 const DIALOGUE = preload("uid://btp44lxu4vgap")
 
 func _ready() -> void:
+	gameMusic.autoplay = true
+	gameMusic.play()
+	UI.get_node("IntroMusic").stop()
 	$Fade.visible = true
 	anim.play("Inicio")
 	Player.InputOFF = true
@@ -19,7 +25,11 @@ func _ready() -> void:
 	DialogueManager.show_dialogue_balloon(DIALOGUE, "VaSaliendo")
 	await DialogueManager.dialogue_ended
 	anim.play("VeAlPotrillo")
+	#audioManager.get_node("Galope").play()
+	#Potrillo.get_node("RelinchoAudio").play()
 	await get_tree().create_timer(3).timeout
+	#Potrillo.get_node("GalopeAudio").autoplay = true
+	
 	DialogueManager.show_dialogue_balloon(DIALOGUE, "VeAlPotrillo")
 	await DialogueManager.dialogue_ended
 	DeadPotrillo($Potrillo)
@@ -40,6 +50,7 @@ func Calden(player: Node2D) -> void:
 		DialogueManager.show_dialogue_balloon(DIALOGUE, "SinPiezas")
 		await DialogueManager.dialogue_ended
 		player.InputOFF = false
+	Potrillo.queue_free()
 
 func _on_pieza_1_body_entered(player: Node2D) -> void:
 	player.InputOFF = true
@@ -71,4 +82,6 @@ func DeadPotrillo(_body: Node2D) -> void:
 func PasilloCalden(body: Node2D) -> void:
 	if body.Piezas < 2: return
 	anim.play("PasilloCalden")
+	
 	get_node("PasilloCalden").queue_free()
+	

@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bl0whf7pykyht" path="res://Assets/AkayaKanadaka-Regular.ttf" id="3_s021a"]
 [ext_resource type="Texture2D" uid="uid://cnh882c10wwyv" path="res://Assets/UI_BOTON_0002.png" id="4_boton2"]
 [ext_resource type="Texture2D" uid="uid://ehx1r3ev0lq8" path="res://Assets/SIN_TEXTO_FONDO_MENÚ.png" id="5_ukrey"]
+[ext_resource type="AudioStream" uid="uid://dqknmtf2snqsa" path="res://audio/musica/bombo intro.mp3" id="7_gj2ju"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s021a"]
 texture = ExtResource("3_boton1")
@@ -609,6 +610,10 @@ Colección Enriqueta Schmidt
 López Castro/Luchese/Rodríguez. 2006. Ejemplar de \"caldén\" (Prosopis caldenia) en primer plano. Detrás un bosquecito de la misma especie. Investigación: Aníbal Prina (2007)"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="IntroMusic" type="AudioStreamPlayer" parent="." unique_id=320054793]
+stream = ExtResource("7_gj2ju")
+autoplay = true
 
 [connection signal="pressed" from="Main/Botones/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="Main/Botones/Salir" to="." method="_on_salir_pressed"]
