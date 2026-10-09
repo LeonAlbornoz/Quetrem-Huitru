@@ -207,8 +207,8 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdbgw"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2hbc"]
+radius = 12.799999
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vdbgw"]
 radius = 24.0
@@ -226,7 +226,8 @@ animation = &"Idle_Down"
 autoplay = "Idle_Down"
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1843040260]
-shape = SubResource("RectangleShape2D_vdbgw")
+position = Vector2(0, 4.7999997)
+shape = SubResource("CircleShape2D_g2hbc")
 debug_color = Color(0.9717571, 0, 0.4490255, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1609742488]

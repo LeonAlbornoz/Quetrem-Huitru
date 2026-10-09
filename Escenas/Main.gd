@@ -44,13 +44,13 @@ func Calden(player: Node2D) -> void:
 		UI.anim.play("Ganaste")
 		await get_tree().create_timer(0.4).timeout
 		player.queue_free()
+		Potrillo.queue_free()
 	else:
 		player.InputOFF = true
 		player.anim.play("Idle_" + player.last_direction)
 		DialogueManager.show_dialogue_balloon(DIALOGUE, "SinPiezas")
 		await DialogueManager.dialogue_ended
 		player.InputOFF = false
-	Potrillo.queue_free()
 
 func _on_pieza_1_body_entered(player: Node2D) -> void:
 	player.InputOFF = true

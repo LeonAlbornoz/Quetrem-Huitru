@@ -112,8 +112,7 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xppu"]
-size = Vector2(21.333336, 49.333336)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wc3m8"]
 
 [node name="Potrillo" type="CharacterBody2D" unique_id=909764345 groups=["Potrillo"]]
 scale = Vector2(6, 6)
@@ -129,7 +128,7 @@ autoplay = "Walk_Down"
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1212805432]
 position = Vector2(0, 3.333333)
-shape = SubResource("RectangleShape2D_0xppu")
+shape = SubResource("CapsuleShape2D_wc3m8")
 debug_color = Color(0.68851364, 0.4978866, 3.85046e-07, 0.41960785)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=277796244]
